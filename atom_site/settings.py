@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'chemsklad'
+    'chemsklad',
+    'webpush'
 ]
 
 MIDDLEWARE = [
@@ -103,7 +104,11 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
+WEBPUSH_SETTINGS = {
+   "VAPID_PUBLIC_KEY": "BKHAe_gnvZOEqWsyoSDE6NUt5eFw3GLHoi4imBCfOaOOwVpvRbh9BwqyBHH-spcobVt2wSw37eEqJ-2jNkTFmHE",
+   "VAPID_PRIVATE_KEY": "o216EGcdVFHAe7Z_-4lu6FkHhgyVDpGL1lmvp7KckF4",
+   "VAPID_ADMIN_EMAIL": "komuxin06@mail.ru"
+}
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
