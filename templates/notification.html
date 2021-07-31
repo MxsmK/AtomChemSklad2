@@ -1,23 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+<link rel="stylesheet" href="notification.css" type="text/css">
+<style>
+    th{padding: 0.5rem;
+  text-align: central;
+  border: 1px solid #ccc;}
+    td{padding: 0.5rem;
+  text-align: central;
+  border: 1px solid #ccc;}
+</style>
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Уведомления</title>
 </head>
-<body>
-    <p><a href="/">назад</a></p>
-    <h2>реактивы с заканчивающимся сроком годности</h2>
-    <table>
+<body style="font: normal medium/1.4 sans-serif;">
+    <p><a href="/home"><font size="5">Назад</font></a></p>
+    <h2 align="center">Реактивы с заканчивающимся сроком годности</h2>
+    <table style="border-collapse: collapse; width: 50%;" align="center">
         <tr><th>Название</th><th>Срок годности</th><th>Масса</th></tr>
         {% for react in min_srok %}
-        <tr><td>{{ react.name }}</td><td>{{ react.srok }}</td><td>{{ react.mass }}</td></tr>
+        <tr style="background: #eee;"><td>{{ react.name }}</td><td>{{ react.srok }}</td><td>{{ react.mass_true }}</td></tr>
         {% endfor %}
     </table>
-    <h2>заканчивающиеся реактивы</h2>
-    <table>
+    <h2 align="center">Заканчивающиеся реактивы (менее 50%)</h2>
+    <table style="border-collapse: collapse; width: 50%;" align="center">
         <tr><th>Название</th><th>Срок годности</th><th>Масса</th></tr>
         {% for react in min_mass %}
-        <tr><td>{{ react.name }}</td><td>{{ react.srok }}</td><td>{{ react.mass }}</td></tr>
+        <tr style="background: #eee;"><td>{{ react.name }}</td><td>{{ react.srok }}</td><td>{{ react.mass_true }}</td></tr>
         {% endfor %}
     </table>
 </body>

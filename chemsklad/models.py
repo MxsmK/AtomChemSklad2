@@ -10,7 +10,8 @@ class React(models.Model):
     prov = models.CharField(verbose_name="Поставщик", max_length=20, null=True, blank=True)
     srok = models.DateField(verbose_name="Срок годности", null=True, blank=True)
     place = models.CharField(verbose_name="Место хранения", max_length=30)
-    mass = models.FloatField(verbose_name="Масса, кг", null=True, blank=True)
+    mass = models.FloatField(verbose_name="Изначальная масса, кг", null=True, blank=True)
+    mass_true = models.FloatField(verbose_name="Масса, кг", null=True, blank=True)
 
     def add(self):
         self.save()

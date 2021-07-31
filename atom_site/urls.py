@@ -16,9 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from chemsklad import views
+from django.conf.urls import url, include
 
 urlpatterns = [
-    path('', views.index, name='home'),
+    path('', views.login),
+    path('home/', views.index, name='home'),
     path('admin/', admin.site.urls),
     path('notification/', views.notification)
+]
+
+urlpatterns += [
+    path('accounts/', include('django.contrib.auth.urls')),
 ]
