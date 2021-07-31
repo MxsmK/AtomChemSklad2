@@ -1,11 +1,23 @@
 from django.shortcuts import render
 from .models import React
 from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse
+from django.http import HttpResponseRedirect, HttpResponse
+from django.db import models
+from django.contrib.auth.models import User
+
+
+def start(request):
+    users = User.objects.all()
+    return render(request, "start.html", {'users': users})
 
 
 def login(request):
-    return render(request, "start.html")
+    if request.method == "POST":
+        users_name = list(map(lambda x: x.username, User.objects.all()))
+        name = request.POST.get('name')
+        if name in users_name:
+            return HttpResponseRedirect("/home/")
+    return render(request, "No.html")
 
 
 def index(request):

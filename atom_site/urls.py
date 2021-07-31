@@ -19,10 +19,11 @@ from chemsklad import views
 from django.conf.urls import url, include
 
 urlpatterns = [
-    path('', views.login),
+    path('', views.start),
     path('home/', views.index, name='home'),
     path('admin/', admin.site.urls),
-    path('notification/', views.notification)
+    path('notification/', views.notification),
+    path('login/', views.login)
 ]
 
 urlpatterns += [
